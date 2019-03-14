@@ -1,61 +1,70 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
+<?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<GridPane fx:controller="main.Controller" xmlns:fx="http://javafx.com/fxml" hgap="10" vgap="10">
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<GridPane hgap="10" prefWidth="760.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
     <padding>
-        <Insets top="10" right="10" bottom="10" left="10"/>
+        <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
-    <VBox spacing="10">
-        <Button onMouseClicked="#shapeBtnWasClicked" fx:id="Line">
+    <VBox alignment="TOP_RIGHT" spacing="10">
+        <Button fx:id="Line" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
-                <ImageView fitWidth="20" fitHeight="20">
-                    <Image url="@/assets/line.png"/>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/line.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button onMouseClicked="#shapeBtnWasClicked" fx:id="Oval">
+        <Button fx:id="Oval" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
-                <ImageView fitWidth="20" fitHeight="20">
-                    <Image url="@/assets/oval.png"/>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/oval.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button onMouseClicked="#shapeBtnWasClicked" fx:id="Triangle">
+        <Button fx:id="Triangle" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
-                <ImageView fitWidth="20" fitHeight="20">
-                    <Image url="@/assets/triangle.png"/>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/triangle.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button onMouseClicked="#shapeBtnWasClicked" fx:id="Rectangle">
+        <Button fx:id="Rectangle" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
-                <ImageView fitWidth="20" fitHeight="20">
-                    <Image url="@/assets/rectangle.png"/>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/rectangle.png" />
                 </ImageView>
             </graphic>
         </Button>
-        <Button onMouseClicked="#shapeBtnWasClicked" fx:id="RightTriangle">
+        <Button fx:id="RightTriangle" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
-                <ImageView fitWidth="20" fitHeight="20">
-                    <Image url="@/assets/right_triangle.png"/>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/right_triangle.png" />
                 </ImageView>
             </graphic>
         </Button>
     </VBox>
-    <Canvas fx:id="mainCanvas" width="800" height="450" GridPane.rowIndex="0" GridPane.columnIndex="1"
-            onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" onMouseDragged="#mouseDragged"/>
-    <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2" alignment="CENTER_LEFT">
-        <Button alignment="BOTTOM_CENTER" text="Undo" onMouseClicked="#undoBtnWasClicked"/>
-        <!--<Button alignment="BOTTOM_CENTER" text="Redo" onMouseClicked="#"/>-->
+    <Canvas fx:id="mainCanvas" height="553.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" width="802.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="831.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#undoBtnWasClicked" text="Undo" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo" />
+        <Button onMouseClicked="#drawAllFigures" text="Draw all figures" />
+        <Button onMouseClicked="#clearCanvas" text="Clear" />
     </HBox>
-    <HBox spacing="10" GridPane.rowIndex="1" GridPane.columnIndex="1" alignment="CENTER_RIGHT">
-        <Button text="Draw all figures" onMouseClicked="#drawAllFigures"/>
-        <Button text="Clear" onMouseClicked="#clearCanvas"/>
-    </HBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

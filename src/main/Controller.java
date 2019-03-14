@@ -51,6 +51,12 @@ public class Controller {
         stack.drawOn(gc);
     }
 
+    public void redoBtnWasClicked() {
+        clearCanvas(null);
+        stack.redo();
+        stack.drawOn(gc);
+    }
+
     public void shapeBtnWasClicked(MouseEvent event) {
         shapeCreator.setCurrentFactory(((Button) event.getSource()).getId());
     }
