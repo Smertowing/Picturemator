@@ -6,10 +6,10 @@ public class IdealTriangle extends Shape {
 
     @Override
     public void drawOn(GraphicsContext gc) {
-        double width = Math.abs(secondPoint.x - firstPoint.x) * (secondPoint.x < firstPoint.x ? -1 : 1);
-        double height = Math.abs(secondPoint.y - firstPoint.y) * (secondPoint.y < firstPoint.y ? -1 : 1);
+        double width = Math.abs(betaPoint.x - alfaPoint.x) * (betaPoint.x < alfaPoint.x ? -1 : 1);
+        double height = Math.abs(betaPoint.y - alfaPoint.y) * (betaPoint.y < alfaPoint.y ? -1 : 1);
 
-        gc.strokePolygon(new double[]{firstPoint.x, firstPoint.x + width, firstPoint.x},
-                new double[]{firstPoint.y, firstPoint.y + height, firstPoint.y + height}, 3);
+        gc.strokePolygon(new double[]{alfaPoint.x, alfaPoint.x + width, alfaPoint.x},
+                new double[]{alfaPoint.y, alfaPoint.y + height, alfaPoint.y + height}, 3);
     }
 }

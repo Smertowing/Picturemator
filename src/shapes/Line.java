@@ -6,6 +6,6 @@ public class Line extends Shape {
 
     @Override
     public void drawOn(GraphicsContext gc) {
-        gc.strokeLine(firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y);
+        gc.strokeLine(alfaPoint.x, alfaPoint.y, betaPoint.x, betaPoint.y);
     }
 }

@@ -1,4 +1,6 @@
-package shapes;
+package model;
+
+import shapes.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,7 +15,7 @@ public class ShapeCreator {
         factories.put("Cross", new CrossFactory());
         factories.put("Rectangle", new RectangleFactory());
         factories.put("Oval", new OvalFactory());
-        factories.put("RightTriangle", new IdealTriangleFactory());
+        factories.put("IdealTriangle", new IdealTriangleFactory());
         factories.put("Triangle", new TriangleFactory());
         this.currentFactory = factories.get(currentFactory);
     }

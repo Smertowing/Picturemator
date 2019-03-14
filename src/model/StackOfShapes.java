@@ -1,6 +1,8 @@
-package shapes;
+package model;
 
 import javafx.scene.canvas.GraphicsContext;
+import shapes.Drawable;
+import shapes.Shape;
 
 public class StackOfShapes implements Drawable {
     private Shape[] arrayOfShapes;

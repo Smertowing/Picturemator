@@ -6,7 +6,7 @@ public class Cross extends Shape {
 
     @Override
     public void drawOn(GraphicsContext gc) {
-        gc.strokeLine(firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y);
-        gc.strokeLine(secondPoint.x, firstPoint.y, firstPoint.x, secondPoint.y);
+        gc.strokeLine(alfaPoint.x, alfaPoint.y, betaPoint.x, betaPoint.y);
+        gc.strokeLine(betaPoint.x, alfaPoint.y, alfaPoint.x, betaPoint.y);
     }
 }

@@ -1,5 +1,7 @@
 package main;
 
+import model.ShapeCreator;
+import model.StackOfShapes;
 import shapes.*;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -27,11 +29,11 @@ public class Controller {
     // Drawing on Canvas
     public void mousePressed(MouseEvent mouseEvent) {
         currentShape = shapeCreator.create();
-        currentShape.setFirstPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
     }
 
     public void mouseDragged(MouseEvent mouseEvent) {
-        currentShape.setSecondPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
         clearCanvas(null);
         stack.drawOn(gc);
         currentShape.drawOn(gc);
@@ -39,7 +41,7 @@ public class Controller {
     }
 
     public void mouseReleased(MouseEvent mouseEvent) {
-        currentShape.setSecondPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
         currentShape.drawOn(gc);
         stack.push(currentShape);
         currentShape = null;
@@ -72,33 +74,33 @@ public class Controller {
         StackOfShapes demoList = new StackOfShapes();
 
         Line demoLine = new Line();
-        demoLine.setFirstPoint(new Point2D.Double(10, 10));
-        demoLine.setSecondPoint(new Point2D.Double(100, 100));
+        demoLine.setAlfaPoint(new Point2D.Double(10, 10));
+        demoLine.setBetaPoint(new Point2D.Double(100, 100));
         demoList.push(demoLine);
 
         Cross demoCross = new Cross();
-        demoCross.setFirstPoint(new Point2D.Double(110, 10));
-        demoCross.setSecondPoint(new Point2D.Double(200, 100));
+        demoCross.setAlfaPoint(new Point2D.Double(110, 10));
+        demoCross.setBetaPoint(new Point2D.Double(200, 100));
         demoList.push(demoCross);
 
         Oval demoOval = new Oval();
-        demoOval.setFirstPoint(new Point2D.Double(210, 10));
-        demoOval.setSecondPoint(new Point2D.Double(300, 100));
+        demoOval.setAlfaPoint(new Point2D.Double(210, 10));
+        demoOval.setBetaPoint(new Point2D.Double(300, 100));
         demoList.push(demoOval);
 
         Rectangle demoRectangle = new Rectangle();
-        demoRectangle.setFirstPoint(new Point2D.Double(310, 10));
-        demoRectangle.setSecondPoint(new Point2D.Double(400, 100));
+        demoRectangle.setAlfaPoint(new Point2D.Double(310, 10));
+        demoRectangle.setBetaPoint(new Point2D.Double(400, 100));
         demoList.push(demoRectangle);
 
         IdealTriangle demoRightTriangle = new IdealTriangle();
-        demoRightTriangle.setFirstPoint(new Point2D.Double(410, 10));
-        demoRightTriangle.setSecondPoint(new Point2D.Double(500, 100));
+        demoRightTriangle.setAlfaPoint(new Point2D.Double(410, 10));
+        demoRightTriangle.setBetaPoint(new Point2D.Double(500, 100));
         demoList.push(demoRightTriangle);
 
         Triangle demoTriangle = new Triangle();
-        demoTriangle.setFirstPoint(new Point2D.Double(610, 10));
-        demoTriangle.setSecondPoint(new Point2D.Double(700, 100));
+        demoTriangle.setAlfaPoint(new Point2D.Double(610, 10));
+        demoTriangle.setBetaPoint(new Point2D.Double(700, 100));
         demoList.push(demoTriangle);
 
         demoList.drawOn(gc);
