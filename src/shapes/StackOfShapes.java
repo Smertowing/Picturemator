@@ -2,12 +2,12 @@ package shapes;
 
 import javafx.scene.canvas.GraphicsContext;
 
-public class ListOfShapes implements Drawable {
+public class StackOfShapes implements Drawable {
     private Shape[] arrayOfShapes;
     private int pointer;
     private int maxpointer;
 
-    public ListOfShapes() {
+    public StackOfShapes() {
         arrayOfShapes = new Shape[256];
         pointer = 0;
         maxpointer = 0;
@@ -15,9 +15,7 @@ public class ListOfShapes implements Drawable {
 
     public void push(Shape shape) {
         arrayOfShapes[pointer++] = shape;
-        if (maxpointer < pointer) {
-            maxpointer = pointer;
-        }
+        maxpointer = pointer;
     }
 
     public void pop() {

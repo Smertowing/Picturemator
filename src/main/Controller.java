@@ -14,7 +14,7 @@ public class Controller {
     private Canvas mainCanvas;
 
     private Shape currentShape;
-    private ListOfShapes stack = new ListOfShapes();
+    private StackOfShapes stack = new StackOfShapes();
     private ShapeCreator shapeCreator = new ShapeCreator("Line");
     private GraphicsContext gc;
 
@@ -64,36 +64,41 @@ public class Controller {
     public void clearCanvas(MouseEvent event) {
         gc.clearRect(1, 1, mainCanvas.getWidth() - 2, mainCanvas.getHeight() - 2);
         if (event != null) {
-            stack = new ListOfShapes();
+            stack = new StackOfShapes();
         }
     }
 
     public void drawAllFigures() {
-        ListOfShapes demoList = new ListOfShapes();
+        StackOfShapes demoList = new StackOfShapes();
 
         Line demoLine = new Line();
         demoLine.setFirstPoint(new Point2D.Double(10, 10));
         demoLine.setSecondPoint(new Point2D.Double(100, 100));
         demoList.push(demoLine);
 
+        Cross demoCross = new Cross();
+        demoCross.setFirstPoint(new Point2D.Double(110, 10));
+        demoCross.setSecondPoint(new Point2D.Double(200, 100));
+        demoList.push(demoCross);
+
         Oval demoOval = new Oval();
-        demoOval.setFirstPoint(new Point2D.Double(110, 10));
-        demoOval.setSecondPoint(new Point2D.Double(200, 100));
+        demoOval.setFirstPoint(new Point2D.Double(210, 10));
+        demoOval.setSecondPoint(new Point2D.Double(300, 100));
         demoList.push(demoOval);
 
         Rectangle demoRectangle = new Rectangle();
-        demoRectangle.setFirstPoint(new Point2D.Double(210, 10));
-        demoRectangle.setSecondPoint(new Point2D.Double(300, 100));
+        demoRectangle.setFirstPoint(new Point2D.Double(310, 10));
+        demoRectangle.setSecondPoint(new Point2D.Double(400, 100));
         demoList.push(demoRectangle);
 
         IdealTriangle demoRightTriangle = new IdealTriangle();
-        demoRightTriangle.setFirstPoint(new Point2D.Double(310, 10));
-        demoRightTriangle.setSecondPoint(new Point2D.Double(400, 100));
+        demoRightTriangle.setFirstPoint(new Point2D.Double(410, 10));
+        demoRightTriangle.setSecondPoint(new Point2D.Double(500, 100));
         demoList.push(demoRightTriangle);
 
         Triangle demoTriangle = new Triangle();
-        demoTriangle.setFirstPoint(new Point2D.Double(510, 10));
-        demoTriangle.setSecondPoint(new Point2D.Double(600, 100));
+        demoTriangle.setFirstPoint(new Point2D.Double(610, 10));
+        demoTriangle.setSecondPoint(new Point2D.Double(700, 100));
         demoList.push(demoTriangle);
 
         demoList.drawOn(gc);

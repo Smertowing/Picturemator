@@ -10,6 +10,7 @@ public class ShapeCreator {
 
     public ShapeCreator(String currentFactory) {
         factories.put("Line", new LineFactory());
+        factories.put("Cross", new CrossFactory());
         factories.put("Rectangle", new RectangleFactory());
         factories.put("Oval", new OvalFactory());
         factories.put("RightTriangle", new IdealTriangleFactory());
@@ -37,6 +38,11 @@ class LineFactory extends ShapeFactory {
     public Shape createShape() {
         return new Line();
     }
+}
+
+class CrossFactory extends ShapeFactory {
+    @Override
+    public  Shape createShape() { return new Cross();}
 }
 
 class OvalFactory extends ShapeFactory {
@@ -68,3 +74,5 @@ class TriangleFactory extends ShapeFactory {
         return new Triangle();
     }
 }
+
+
