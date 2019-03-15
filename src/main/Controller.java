@@ -21,6 +21,7 @@ public class Controller {
     private GraphicsContext gc;
 
 
+
     public void initialize() {
         gc = mainCanvas.getGraphicsContext2D();
         gc.strokeRect(0, 0, mainCanvas.getWidth(), mainCanvas.getHeight());
