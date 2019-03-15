@@ -1,6 +1,6 @@
 package main;
 
-import model.ShapeCreator;
+import model.factories.ShapeCreator;
 import model.StackOfShapes;
 import shapes.*;
 import javafx.fxml.FXML;
