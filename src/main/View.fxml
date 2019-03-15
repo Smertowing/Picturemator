@@ -69,8 +69,8 @@
          <HBox.margin>
             <Insets right="500.0" />
          </HBox.margin></Button>
-        <Button onMouseClicked="#drawAllFigures" text="Draw all figures" />
-        <Button onMouseClicked="#clearCanvas" text="Clear" />
+        <Button onMouseClicked="#drawAllFigures" text="Draw all figures" visible="false" />
+        <Button onMouseClicked="#clearCanvas" text="Clear" visible="false" />
     </HBox>
    <columnConstraints>
       <ColumnConstraints />

@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
-        primaryStage.setTitle("Picturemator by Holubeu Kiryl");
+        primaryStage.setTitle("Picturemator");
         primaryStage.setScene(new Scene(root, 870, 610));
         primaryStage.show();
     }

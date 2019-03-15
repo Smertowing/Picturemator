@@ -42,11 +42,6 @@ class LineFactory extends ShapeFactory {
     }
 }
 
-class CrossFactory extends ShapeFactory {
-    @Override
-    public  Shape createShape() { return new Cross();}
-}
-
 class OvalFactory extends ShapeFactory {
 
     @Override
@@ -77,4 +72,7 @@ class TriangleFactory extends ShapeFactory {
     }
 }
 
-
+class CrossFactory extends ShapeFactory {
+    @Override
+    public Shape createShape() { return new Cross();}
+}
