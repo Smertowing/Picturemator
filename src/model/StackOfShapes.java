@@ -1,7 +1,7 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
-import shapes.Drawable;
+import shapes.Interfaces.Drawable;
 import shapes.Shape;
 
 public class StackOfShapes implements Drawable {
