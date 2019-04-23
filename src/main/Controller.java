@@ -79,10 +79,10 @@ public class Controller {
         demoLine.setBetaPoint(new Point2D.Double(100, 100));
         demoList.push(demoLine);
 
-        Cross demoCross = new Cross();
-        demoCross.setAlfaPoint(new Point2D.Double(110, 10));
-        demoCross.setBetaPoint(new Point2D.Double(200, 100));
-        demoList.push(demoCross);
+        Round demoRound = new Round();
+        demoRound.setAlfaPoint(new Point2D.Double(110, 10));
+        demoRound.setBetaPoint(new Point2D.Double(200, 100));
+        demoList.push(demoRound);
 
         Oval demoOval = new Oval();
         demoOval.setAlfaPoint(new Point2D.Double(210, 10));

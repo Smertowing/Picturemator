@@ -1,7 +1,7 @@
 package model.factories;
 
 import shapes.*;
-
+import shapes.Abstracts.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,7 +12,7 @@ public class ShapeCreator {
 
     public ShapeCreator(String currentFactory) {
         factories.put("Line", new LineFactory());
-        factories.put("Cross", new CrossFactory());
+        factories.put("Round", new RoundFactory());
         factories.put("Rectangle", new RectangleFactory());
         factories.put("Oval", new OvalFactory());
         factories.put("IdealTriangle", new IdealTriangleFactory());
@@ -27,11 +27,6 @@ public class ShapeCreator {
     public void setCurrentFactory(String currentFactory) {
         this.currentFactory = factories.get(currentFactory);
     }
-}
-
-
-abstract class ShapeFactory {
-    public abstract Shape createShape();
 }
 
 class LineFactory extends ShapeFactory {
@@ -72,7 +67,7 @@ class TriangleFactory extends ShapeFactory {
     }
 }
 
-class CrossFactory extends ShapeFactory {
+class RoundFactory extends ShapeFactory {
     @Override
-    public Shape createShape() { return new Cross();}
+    public Shape createShape() { return new Round();}
 }
