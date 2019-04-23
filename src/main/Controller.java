@@ -1,35 +1,44 @@
 package main;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.paint.Color;
 import model.factories.ShapeCreator;
-import model.StackOfShapes;
+import model.*;
 import shapes.*;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import shapes.Abstracts.*;
 
 import java.awt.geom.Point2D;
 
 public class Controller {
     @FXML
     private Canvas mainCanvas;
-
+    @FXML
+    private ColorPicker innerColorPicker, borderColorPicker;
     private Shape currentShape;
     private StackOfShapes stack = new StackOfShapes();
     private ShapeCreator shapeCreator = new ShapeCreator("Line");
     private GraphicsContext gc;
 
-
-
     public void initialize() {
         gc = mainCanvas.getGraphicsContext2D();
+        gc.setLineWidth(3);
         gc.strokeRect(0, 0, mainCanvas.getWidth(), mainCanvas.getHeight());
+
+        innerColorPicker.setValue(Color.TRANSPARENT);
+        borderColorPicker.setValue(Color.BLACK);
     }
 
     // Drawing on Canvas
     public void mousePressed(MouseEvent mouseEvent) {
         currentShape = shapeCreator.create();
+        currentShape.setInnerColor(innerColorPicker.getValue());
+        currentShape.setBorderColor(borderColorPicker.getValue());
         currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
     }
 

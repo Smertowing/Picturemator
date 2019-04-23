@@ -2,7 +2,7 @@ package model;
 
 import javafx.scene.canvas.GraphicsContext;
 import shapes.Interfaces.Drawable;
-import shapes.Shape;
+import shapes.Abstracts.*;
 
 public class StackOfShapes implements Drawable {
     private Shape[] arrayOfShapes;
