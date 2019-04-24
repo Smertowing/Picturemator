@@ -15,6 +15,7 @@ public class ShapeCreator {
         factories.put("Line", new LineFactory());
         factories.put("Round", new RoundFactory());
         factories.put("Rectangle", new RectangleFactory());
+        factories.put("Square", new SquareFactory());
         factories.put("Oval", new OvalFactory());
         factories.put("IdealTriangle", new IdealTriangleFactory());
         factories.put("Triangle", new TriangleFactory());
@@ -51,6 +52,14 @@ class RectangleFactory extends ShapeFactory {
     @Override
     public Shape createShape(Color borderColor, Color innerColor) {
         return new Rectangle(borderColor, innerColor);
+    }
+}
+
+class SquareFactory extends ShapeFactory {
+
+    @Override
+    public Shape createShape(Color borderColor, Color innerColor) {
+        return new Square(borderColor, innerColor);
     }
 }
 

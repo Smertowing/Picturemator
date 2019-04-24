@@ -5,24 +5,25 @@ import javafx.scene.paint.Color;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 
-public class Oval extends Shape implements Editable {
+public class Square extends Shape implements Editable {
     @Override
     public void drawOn(GraphicsContext gc) {
+        double side = (Math.abs(betaPoint.x - alfaPoint.x) < Math.abs(betaPoint.y - alfaPoint.y) ? Math.abs(betaPoint.x - alfaPoint.x) : Math.abs(betaPoint.y - alfaPoint.y));
 
         gc.setStroke(borderColor);
-        gc.strokeOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+        gc.strokeRect((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
                 (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
-                Math.abs(betaPoint.x - alfaPoint.x),
-                Math.abs(betaPoint.y - alfaPoint.y));
+                side,
+                side);
 
         gc.setFill(innerColor);
-        gc.fillOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+        gc.fillRect((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
                 (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
-                Math.abs(betaPoint.x - alfaPoint.x),
-                Math.abs(betaPoint.y - alfaPoint.y));
+                side,
+                side);
     }
 
-    public Oval(Color borderColor, Color innerColor) {
+    public Square(Color borderColor, Color innerColor) {
         this.borderColor = borderColor;
         this.innerColor = innerColor;
     }

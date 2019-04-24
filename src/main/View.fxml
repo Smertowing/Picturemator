@@ -56,7 +56,7 @@
         <Button fx:id="Square" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
                 <ImageView fitHeight="20" fitWidth="20">
-                    <Image url="@/assets/rectangle.png" />
+                    <Image url="@/assets/square.png" />
                 </ImageView>
             </graphic>
         </Button>

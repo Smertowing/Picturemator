@@ -3,7 +3,7 @@ package shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import shapes.Abstracts.*;
-import shapes.Interfaces.Editable;
+import shapes.Interfaces.*;
 
 public class Triangle extends Shape implements Editable {
     @Override
