@@ -4,6 +4,7 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -17,17 +18,17 @@
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
     <VBox alignment="TOP_RIGHT" spacing="10">
+        <Button fx:id="EditMode">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/cursor.png" />
+                </ImageView>
+            </graphic>
+        </Button>
         <Button fx:id="Line" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
                 <ImageView fitHeight="20" fitWidth="20">
                     <Image url="@/assets/line.png" />
-                </ImageView>
-            </graphic>
-        </Button>
-        <Button fx:id="Round" onMouseClicked="#shapeBtnWasClicked">
-            <graphic>
-                <ImageView fitHeight="20" fitWidth="20">
-                    <Image url="@/assets/round.png" />
                 </ImageView>
             </graphic>
         </Button>
@@ -38,10 +39,10 @@
                 </ImageView>
             </graphic>
         </Button>
-        <Button fx:id="Triangle" onMouseClicked="#shapeBtnWasClicked">
+        <Button fx:id="Round" onMouseClicked="#shapeBtnWasClicked">
             <graphic>
                 <ImageView fitHeight="20" fitWidth="20">
-                    <Image url="@/assets/triangle.png" />
+                    <Image url="@/assets/round.png" />
                 </ImageView>
             </graphic>
         </Button>
@@ -49,6 +50,20 @@
             <graphic>
                 <ImageView fitHeight="20" fitWidth="20">
                     <Image url="@/assets/rectangle.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="Square" onMouseClicked="#shapeBtnWasClicked">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/rectangle.png" />
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="Triangle" onMouseClicked="#shapeBtnWasClicked">
+            <graphic>
+                <ImageView fitHeight="20" fitWidth="20">
+                    <Image url="@/assets/triangle.png" />
                 </ImageView>
             </graphic>
         </Button>
@@ -62,16 +77,12 @@
     </VBox>
     <Canvas fx:id="mainCanvas" height="553.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" width="802.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
     <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="831.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <Button alignment="BOTTOM_CENTER" onMouseClicked="#undoBtnWasClicked" text="Undo">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin></Button>
-        <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo">
-         <HBox.margin>
-            <Insets />
-         </HBox.margin></Button>
-      <ColorPicker fx:id = "borderColorPicker" />
-      <ColorPicker fx:id = "innerColorPicker" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#undoBtnWasClicked" text="Undo" />
+      <Label text="Border Color:" />
+      <ColorPicker fx:id="borderColorPicker" />
+      <Label text="Inner Color" />
+      <ColorPicker fx:id="innerColorPicker" />
     </HBox>
    <columnConstraints>
       <ColumnConstraints />

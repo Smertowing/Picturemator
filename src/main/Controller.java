@@ -36,9 +36,7 @@ public class Controller {
 
     // Drawing on Canvas
     public void mousePressed(MouseEvent mouseEvent) {
-        currentShape = shapeCreator.create();
-        currentShape.setInnerColor(innerColorPicker.getValue());
-        currentShape.setBorderColor(borderColorPicker.getValue());
+        currentShape = shapeCreator.create(borderColorPicker.getValue(), innerColorPicker.getValue());
         currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
     }
 
@@ -78,41 +76,5 @@ public class Controller {
         if (event != null) {
             stack = new StackOfShapes();
         }
-    }
-
-    public void drawAllFigures() {
-        StackOfShapes demoList = new StackOfShapes();
-
-        Line demoLine = new Line();
-        demoLine.setAlfaPoint(new Point2D.Double(10, 10));
-        demoLine.setBetaPoint(new Point2D.Double(100, 100));
-        demoList.push(demoLine);
-
-        Round demoRound = new Round();
-        demoRound.setAlfaPoint(new Point2D.Double(110, 10));
-        demoRound.setBetaPoint(new Point2D.Double(200, 100));
-        demoList.push(demoRound);
-
-        Oval demoOval = new Oval();
-        demoOval.setAlfaPoint(new Point2D.Double(210, 10));
-        demoOval.setBetaPoint(new Point2D.Double(300, 100));
-        demoList.push(demoOval);
-
-        Rectangle demoRectangle = new Rectangle();
-        demoRectangle.setAlfaPoint(new Point2D.Double(310, 10));
-        demoRectangle.setBetaPoint(new Point2D.Double(400, 100));
-        demoList.push(demoRectangle);
-
-        IdealTriangle demoRightTriangle = new IdealTriangle();
-        demoRightTriangle.setAlfaPoint(new Point2D.Double(410, 10));
-        demoRightTriangle.setBetaPoint(new Point2D.Double(500, 100));
-        demoList.push(demoRightTriangle);
-
-        Triangle demoTriangle = new Triangle();
-        demoTriangle.setAlfaPoint(new Point2D.Double(610, 10));
-        demoTriangle.setBetaPoint(new Point2D.Double(700, 100));
-        demoList.push(demoTriangle);
-
-        demoList.drawOn(gc);
     }
 }
