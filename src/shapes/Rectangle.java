@@ -5,8 +5,6 @@ import javafx.scene.paint.Color;
 import shapes.Abstracts.Shape;
 import shapes.Interfaces.Editable;
 
-import java.awt.geom.Point2D;
-
 public class Rectangle extends Shape implements Editable {
     @Override
     public void drawOn(GraphicsContext gc) {

@@ -1,11 +1,9 @@
 package main;
 
-import javafx.event.ActionEvent;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.paint.Color;
 import model.factories.ShapeCreator;
 import model.*;
-import shapes.*;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
