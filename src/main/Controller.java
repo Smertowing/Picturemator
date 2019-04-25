@@ -25,6 +25,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Controller {
     @FXML
@@ -158,7 +159,7 @@ public class Controller {
                     }
                 }
             } catch (IOException e) {
-                alert(e);
+                alert(new RuntimeException("Invalid path"));
             }
         }
     }
@@ -171,7 +172,22 @@ public class Controller {
         fileChooser.getExtensionFilters().add(extFilter);
         File file = fileChooser.showOpenDialog(null);
         if (file != null) {
+            try {
+                List<String> rows = Files.readAllLines(Paths.get(file.getPath()));
 
+                ShapeConverter converter = new ShapeConverter();
+
+                stack = converter.unwrap(rows);
+
+                if(stack.isEmpty()) {
+                    alert(new RuntimeException("Invalid or empty file"));
+                } else {
+                    clearCanvas(null);
+                    stack.release(gc);
+                }
+            } catch (IOException e) {
+                alert(new RuntimeException("Invalid or empty file"));
+            }
         }
     }
 }

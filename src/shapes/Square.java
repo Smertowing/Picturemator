@@ -8,6 +8,11 @@ import shapes.Interfaces.*;
 import java.awt.geom.Point2D;
 
 public class Square extends Shape implements Selectable, Editable, Saveable {
+
+    public Square() {
+        classname = "Square";
+    }
+
     @Override
     public void drawOn(GraphicsContext gc) {
         double side = (Math.abs(betaPoint.x - alfaPoint.x) < Math.abs(betaPoint.y - alfaPoint.y) ? Math.abs(betaPoint.x - alfaPoint.x) : Math.abs(betaPoint.y - alfaPoint.y));

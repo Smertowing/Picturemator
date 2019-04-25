@@ -1,6 +1,10 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import model.factories.ShapeCreator;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 import shapes.*;
@@ -20,7 +24,23 @@ public class ShapeConverter {
         return csv.toString();
     }
 
+    public StackOfShapes unwrap(List<String> rows) {
+        StackOfShapes stack = new StackOfShapes();
+        ShapeCreator shapeCreator = new ShapeCreator("");
+        for(String row : rows) {
+            String[] cols = row.split(";");
+            String className = cols[0];
+            shapeCreator.setCurrentFactory(className);
+            Shape shape = shapeCreator.create();
+            if (shape.unwrap(row)) {
+                stack.push(shape);
+            }
+        }
+        return stack;
+    }
+
     /*
+
     public List<Shape> unwrap(List<String> rows) {
         List<Shape> shapes = new ArrayList<>();
         for(String row : rows) {

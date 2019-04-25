@@ -9,6 +9,10 @@ import java.awt.geom.Point2D;
 
 public class IdealTriangle extends Shape implements Selectable, Editable, Saveable {
 
+    public IdealTriangle() {
+        classname = "IdealTriangle";
+    }
+
     @Override
     public void drawOn(GraphicsContext gc) {
         double width = Math.abs(betaPoint.x - alfaPoint.x) * (betaPoint.x < alfaPoint.x ? -1 : 1);

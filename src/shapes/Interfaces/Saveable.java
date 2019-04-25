@@ -2,5 +2,5 @@ package shapes.Interfaces;
 
 public interface Saveable {
     String wrap();
-    boolean unwrap();
+    boolean unwrap(String description);
 }

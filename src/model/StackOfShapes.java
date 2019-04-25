@@ -20,6 +20,10 @@ public class StackOfShapes {
         maxpointer = 0;
     }
 
+    public boolean isEmpty() {
+        return arrayOfShapes.isEmpty();
+    }
+
     public void push(Shape shape) {
         arrayOfShapes.add(pointer++, shape);
         maxpointer = pointer;

@@ -8,6 +8,11 @@ import shapes.Interfaces.*;
 import java.awt.geom.Point2D;
 
 public class Triangle extends Shape implements Selectable, Editable, Saveable {
+
+    public Triangle() {
+        classname = "Triangle";
+    }
+
     @Override
     public void drawOn(GraphicsContext gc) {
         double width = Math.abs(betaPoint.x - alfaPoint.x);

@@ -8,6 +8,11 @@ import shapes.Interfaces.*;
 import java.awt.geom.Point2D;
 
 public class Oval extends Shape implements Selectable, Editable, Saveable {
+
+    public Oval() {
+        classname = "Oval";
+    }
+
     @Override
     public void drawOn(GraphicsContext gc) {
 
