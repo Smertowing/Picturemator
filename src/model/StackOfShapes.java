@@ -6,6 +6,7 @@ import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StackOfShapes {
     private ArrayList<Shape> arrayOfShapes;
@@ -58,6 +59,14 @@ public class StackOfShapes {
         }
         state.editingShape = null;
         state.selectionPoint = null;
+    }
+
+    public ArrayList<Shape> getList() {
+        ArrayList<Shape> array = new ArrayList<>();
+        for (int i = 0; i < pointer; i++) {
+            array.add(i, arrayOfShapes.get(i));
+        }
+        return array;
     }
 
 

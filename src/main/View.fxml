@@ -77,12 +77,14 @@
     </VBox>
     <Canvas fx:id="mainCanvas" height="553.0" onMouseDragged="#mouseDragged" onMousePressed="#mousePressed" onMouseReleased="#mouseReleased" width="802.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
     <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="831.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo" />
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#undoBtnWasClicked" text="Undo" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo" />
       <Label text="Border Color:" />
       <ColorPicker fx:id="borderColorPicker" />
       <Label text="Inner Color" />
       <ColorPicker fx:id="innerColorPicker" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#saveAsClicked"  text="Save As" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#openClicked" text="Open..." />
     </HBox>
    <columnConstraints>
       <ColumnConstraints />

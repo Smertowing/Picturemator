@@ -7,7 +7,7 @@ import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 
-public class Line extends Shape implements Selectable, Editable {
+public class Line extends Shape implements Selectable, Editable, Saveable {
     @Override
     public void drawOn(GraphicsContext gc) {
 

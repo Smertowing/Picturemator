@@ -23,4 +23,11 @@ public abstract class Shape implements Drawable {
     public void setBorderColor(Color borderColor) {
         this.borderColor = borderColor;
     }
+
+    public String wrap() {
+        return alfaPoint.toString() + ',' + betaPoint.toString() + ',' + borderColor.toString() + ',' + innerColor.toString() + ';';
+    }
+    public boolean unwrap() {
+        return false;
+    }
 }

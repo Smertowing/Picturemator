@@ -1,7 +1,11 @@
 package main;
 
+import javafx.event.Event;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.paint.Color;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import model.factories.ShapeCreator;
 import model.*;
 import javafx.fxml.FXML;
@@ -13,6 +17,14 @@ import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class Controller {
     @FXML
@@ -106,6 +118,60 @@ public class Controller {
         gc.clearRect(1, 1, mainCanvas.getWidth() - 2, mainCanvas.getHeight() - 2);
         if (event != null) {
             stack = new StackOfShapes();
+        }
+    }
+
+    private void alert(Exception e) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Error:");
+        alert.setContentText(e.getMessage());
+
+        alert.showAndWait();
+    }
+
+    public void saveAsClicked() {
+        DirectoryChooser directoryChooser = new DirectoryChooser();
+        directoryChooser.setTitle("Save");
+        File selectedDirectory = directoryChooser.showDialog(null);
+        if (selectedDirectory != null) {
+            String directorypath = selectedDirectory.getPath();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+            Date date = new Date();
+            String currentDate = dateFormat.format(date);
+            String format = currentDate+".txt";
+
+            String path = directorypath+"/"+format;
+
+            File newfile = new File(path);
+            try {
+                if (newfile.createNewFile()) {
+                    ArrayList<Shape> shapes = stack.getList();
+
+                    ShapeConverter converter = new ShapeConverter();
+                    String wrapedShapes = converter.wrap(shapes);
+                    try (BufferedWriter bw = new BufferedWriter(new FileWriter(path, true))) {
+                        bw.write(wrapedShapes);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+
+                    }
+                }
+            } catch (IOException e) {
+                alert(e);
+            }
+        }
+    }
+
+    public void openClicked() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open");
+        FileChooser.ExtensionFilter extFilter =
+                new FileChooser.ExtensionFilter("Text files (*.txt)", "*.txt");
+        fileChooser.getExtensionFilters().add(extFilter);
+        File file = fileChooser.showOpenDialog(null);
+        if (file != null) {
+
         }
     }
 }
