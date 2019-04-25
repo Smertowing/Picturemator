@@ -1,5 +1,6 @@
 package shapes.Abstracts;
 
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import shapes.Interfaces.Drawable;
 
@@ -23,6 +24,19 @@ public abstract class Shape implements Drawable {
     }
     public void setBorderColor(Color borderColor) {
         this.borderColor = borderColor;
+    }
+
+    public void showPointsOn(GraphicsContext gc) {
+        gc.setFill(Color.DARKBLUE);
+        gc.fillOval(alfaPoint.x-5,alfaPoint.y-5,11,11);
+        gc.fillOval(betaPoint.x-5,betaPoint.y-5,11,11);
+    }
+
+    public void shift(Double deltaX, Double deltaY) {
+        alfaPoint.x += deltaX;
+        alfaPoint.y += deltaY;
+        betaPoint.x += deltaX;
+        betaPoint.y += deltaY;
     }
 
     public String wrap() {
@@ -49,4 +63,5 @@ public abstract class Shape implements Drawable {
             return false;
         }
     }
+
 }

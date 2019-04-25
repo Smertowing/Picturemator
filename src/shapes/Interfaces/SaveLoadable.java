@@ -1,6 +1,6 @@
 package shapes.Interfaces;
 
-public interface Saveable {
+public interface SaveLoadable {
     String wrap();
     boolean unwrap(String description);
 }

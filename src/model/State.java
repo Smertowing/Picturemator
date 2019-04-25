@@ -6,6 +6,7 @@ import shapes.Abstracts.*;
 public class State {
 
     private static State instance = null;
+
     private State() {
         drawerMode = false;
     }

@@ -171,6 +171,8 @@ public class Controller {
                 }
             } catch (IOException e) {
                 alert(new RuntimeException("Invalid path"));
+            } catch (Exception e) {
+                alert(new Exception(e));
             }
         }
     }
@@ -198,6 +200,8 @@ public class Controller {
                 }
             } catch (IOException e) {
                 alert(new RuntimeException("Invalid or empty file"));
+            } catch (Exception e) {
+                alert(new Exception(e));
             }
         }
     }

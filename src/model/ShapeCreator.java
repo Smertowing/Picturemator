@@ -38,7 +38,6 @@ public class ShapeCreator {
     }
 
     static class LineFactory extends ShapeFactory {
-
         @Override
         public Shape createShape() {
             return new Line();
@@ -46,7 +45,6 @@ public class ShapeCreator {
     }
 
     static class OvalFactory extends ShapeFactory {
-
         @Override
         public Shape createShape() {
             return new Oval();
@@ -54,7 +52,6 @@ public class ShapeCreator {
     }
 
     static class RectangleFactory extends ShapeFactory {
-
         @Override
         public Shape createShape() {
             return new Rectangle();
@@ -63,13 +60,10 @@ public class ShapeCreator {
 
     static class RoundFactory extends ShapeFactory {
         @Override
-        public Shape createShape() {
-            return new Round();
-        }
+        public Shape createShape() { return new Round(); }
     }
 
     static class SquareFactory extends ShapeFactory {
-
         @Override
         public Shape createShape() {
             return new Square();

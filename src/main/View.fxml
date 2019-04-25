@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane hgap="10" prefWidth="760.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
+<GridPane hgap="10" maxHeight="610.0" maxWidth="870.0" minHeight="610.0" minWidth="870.0" prefHeight="610.0" prefWidth="870.0" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
     <padding>
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
@@ -80,10 +80,10 @@
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#undoBtnWasClicked" text="Undo" />
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo" />
       <Label text="Border Color:" />
-      <ColorPicker fx:id="borderColorPicker" onHiding="#onHidingColorPicker"/>
+      <ColorPicker fx:id="borderColorPicker" onHiding="#onHidingColorPicker" />
       <Label text="Inner Color" />
-      <ColorPicker fx:id="innerColorPicker" onHiding="#onHidingColorPicker"/>
-        <Button alignment="BOTTOM_CENTER" onMouseClicked="#saveAsClicked"  text="Save As" />
+      <ColorPicker fx:id="innerColorPicker" onHiding="#onHidingColorPicker" />
+        <Button alignment="BOTTOM_CENTER" onMouseClicked="#saveAsClicked" text="Save As" />
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#openClicked" text="Open..." />
     </HBox>
    <columnConstraints>

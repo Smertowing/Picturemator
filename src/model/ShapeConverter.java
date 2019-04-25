@@ -13,8 +13,8 @@ public class ShapeConverter {
 
         shapes.forEach(
             shape -> {
-                if(shape instanceof Saveable)
-                    csv.append(((Saveable) shape).wrap());
+                if(shape instanceof SaveLoadable)
+                    csv.append(((SaveLoadable) shape).wrap());
             }
         );
 
@@ -28,33 +28,17 @@ public class ShapeConverter {
             String[] cols = row.split(";");
             String className = cols[0];
             shapeCreator.setCurrentFactory(className);
-            Shape shape = shapeCreator.create();
-            if (shape.unwrap(row)) {
-                stack.push(shape);
+            try {
+                Shape shape = shapeCreator.create();
+                if(shape instanceof SaveLoadable)
+                    if (((SaveLoadable) shape).unwrap(row)) {
+                        stack.push(shape);
+                    }
+            } catch (Exception e) {
+                System.out.print("Corrupted string with name " + className);
             }
         }
         return stack;
     }
 
-    /*
-
-    public List<Shape> unwrap(List<String> rows) {
-        List<Shape> shapes = new ArrayList<>();
-        for(String row : rows) {
-            String[] cols = row.split(";");
-            String className = cols[0];
-            Optional<Shape> figureOptional = FigureFactory.getFigure(className, canvas, new Point2D.Double(0,0));
-            figureOptional.ifPresent(
-                figure -> {
-                    if(figure instanceof Saveable) {
-                        if(((Saveable) figure).unwrap(row)) {
-                            shapes.add(figure);
-                        }
-                    }
-                }
-            );
-        }
-        return shapes;
-    }
-    */
 }

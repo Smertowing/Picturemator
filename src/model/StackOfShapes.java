@@ -6,18 +6,18 @@ import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
-import java.util.List;
 
 public class StackOfShapes {
+
     private ArrayList<Shape> arrayOfShapes;
     private State state = State.getInstance();
     private int pointer;
-    private int maxpointer;
+    private int maxPointer;
 
     public StackOfShapes() {
         arrayOfShapes = new ArrayList<>();
         pointer = 0;
-        maxpointer = 0;
+        maxPointer = 0;
     }
 
     public boolean isEmpty() {
@@ -26,7 +26,7 @@ public class StackOfShapes {
 
     public void push(Shape shape) {
         arrayOfShapes.add(pointer++, shape);
-        maxpointer = pointer;
+        maxPointer = pointer;
     }
 
     public void pop() {
@@ -34,7 +34,7 @@ public class StackOfShapes {
     }
 
     public void redo() {
-        if (pointer < maxpointer) pointer++;
+        if (pointer < maxPointer) pointer++;
     }
 
     public void release(GraphicsContext gc) {
@@ -72,6 +72,5 @@ public class StackOfShapes {
         }
         return array;
     }
-
 
 }

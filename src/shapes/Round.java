@@ -7,7 +7,7 @@ import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 
-public class Round extends Shape implements Selectable, Editable, Saveable {
+public class Round extends Shape implements Selectable, Editable, SaveLoadable {
 
     public Round() {
         classname = "Round";
@@ -45,19 +45,6 @@ public class Round extends Shape implements Selectable, Editable, Saveable {
                 side, side);
 
         gc.setLineWidth(tempWidth);
-    }
-
-    public void showPointsOn(GraphicsContext gc) {
-        gc.setFill(Color.DARKBLUE);
-        gc.fillOval(alfaPoint.x-5,alfaPoint.y-5,11,11);
-        gc.fillOval(betaPoint.x-5,betaPoint.y-5,11,11);
-    }
-
-    public void shift(Double deltaX, Double deltaY) {
-        alfaPoint.x += deltaX;
-        alfaPoint.y += deltaY;
-        betaPoint.x += deltaX;
-        betaPoint.y += deltaY;
     }
 
 }

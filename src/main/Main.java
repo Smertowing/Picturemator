@@ -13,6 +13,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("View.fxml"));
         primaryStage.setTitle("Picturemator");
         primaryStage.setScene(new Scene(root, 870, 610));
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
