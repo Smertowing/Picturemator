@@ -22,6 +22,7 @@ public class Controller {
     private StackOfShapes stack = new StackOfShapes();
     private ShapeCreator shapeCreator = new ShapeCreator("Line");
     private GraphicsContext gc;
+    private Config config = Config.getInstance();
 
     public void initialize() {
         gc = mainCanvas.getGraphicsContext2D();
@@ -34,23 +35,31 @@ public class Controller {
 
     // Drawing on Canvas
     public void mousePressed(MouseEvent mouseEvent) {
-        currentShape = shapeCreator.create(borderColorPicker.getValue(), innerColorPicker.getValue());
-        currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        if (config.drawerMode) {
+            currentShape = shapeCreator.create();
+            currentShape.setBorderColor(borderColorPicker.getValue());
+            currentShape.setInnerColor(innerColorPicker.getValue());
+            currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        }
     }
 
     public void mouseDragged(MouseEvent mouseEvent) {
-        currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
-        clearCanvas(null);
-        stack.drawOn(gc);
-        currentShape.drawOn(gc);
+        if (config.drawerMode) {
+            currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+            clearCanvas(null);
+            stack.drawOn(gc);
+            currentShape.drawOn(gc);
+        }
 
     }
 
     public void mouseReleased(MouseEvent mouseEvent) {
-        currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
-        currentShape.drawOn(gc);
-        stack.push(currentShape);
-        currentShape = null;
+        if (config.drawerMode) {
+            currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+            currentShape.drawOn(gc);
+            stack.push(currentShape);
+            currentShape = null;
+        }
     }
 
     public void undoBtnWasClicked() {
@@ -66,10 +75,15 @@ public class Controller {
     }
 
     public void shapeBtnWasClicked(MouseEvent event) {
+        config.setDrawerMode(true);
         shapeCreator.setCurrentFactory(((Button) event.getSource()).getId());
     }
 
-    public void clearCanvas(MouseEvent event) {
+    public void selectModeClicked(MouseEvent event) {
+        config.setDrawerMode(false);
+    }
+
+    private void clearCanvas(MouseEvent event) {
         gc.clearRect(1, 1, mainCanvas.getWidth() - 2, mainCanvas.getHeight() - 2);
         if (event != null) {
             stack = new StackOfShapes();

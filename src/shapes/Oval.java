@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 
-public class Oval extends Shape implements Editable {
+public class Oval extends Shape implements Selectable, Editable {
     @Override
     public void drawOn(GraphicsContext gc) {
 
@@ -22,15 +22,17 @@ public class Oval extends Shape implements Editable {
                 Math.abs(betaPoint.y - alfaPoint.y));
     }
 
-    public Oval(Color borderColor, Color innerColor) {
-        this.borderColor = borderColor;
-        this.innerColor = innerColor;
+    public void select(GraphicsContext gc) {
+        double tempWidth = gc.getLineWidth();
+        gc.setLineWidth(6);
+
+        gc.setStroke(Color.AQUA);
+        gc.strokeOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+                (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
+                Math.abs(betaPoint.x - alfaPoint.x),
+                Math.abs(betaPoint.y - alfaPoint.y));
+
+        gc.setLineWidth(tempWidth);
     }
 
-    public void setInnerColor(Color innerColor) {
-        this.innerColor = innerColor;
-    }
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
 }

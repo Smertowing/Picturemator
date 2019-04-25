@@ -16,4 +16,11 @@ public abstract class Shape implements Drawable {
     public void setBetaPoint(Point2D.Double betaPoint) {
         this.betaPoint = betaPoint;
     }
+
+    public void setInnerColor(Color innerColor) {
+        this.innerColor = innerColor;
+    }
+    public void setBorderColor(Color borderColor) {
+        this.borderColor = borderColor;
+    }
 }

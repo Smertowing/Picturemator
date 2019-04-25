@@ -1,15 +1,12 @@
 package model;
 
-import javafx.scene.paint.Color;
-
 public class Config {
 
     private static Config instance = null;
-    public Color innerColor, borderColor;
+    public boolean drawerMode;
 
     private Config() {
-        innerColor = Color.TRANSPARENT;
-        borderColor = Color.BLACK;
+        drawerMode = false;
     }
 
     public static Config getInstance() {
@@ -19,11 +16,8 @@ public class Config {
         return instance;
     }
 
-    public void setInnerColor(Color innerColor) {
-        this.innerColor = innerColor;
-    }
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
+    public void setDrawerMode(boolean isDrawerMode) {
+       drawerMode = isDrawerMode;
     }
 
 }

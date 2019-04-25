@@ -18,7 +18,7 @@
         <Insets bottom="10" left="10" right="10" top="10" />
     </padding>
     <VBox alignment="TOP_RIGHT" spacing="10">
-        <Button fx:id="EditMode">
+        <Button fx:id="EditMode" onMouseClicked="#selectModeClicked">
             <graphic>
                 <ImageView fitHeight="20" fitWidth="20">
                     <Image url="@/assets/cursor.png" />

@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 
-public class Line extends Shape implements Editable {
+public class Line extends Shape implements Selectable, Editable {
     @Override
     public void drawOn(GraphicsContext gc) {
 
@@ -13,16 +13,14 @@ public class Line extends Shape implements Editable {
         gc.strokeLine(alfaPoint.x, alfaPoint.y, betaPoint.x, betaPoint.y);
     }
 
-    public Line(Color borderColor, Color innerColor) {
-        this.borderColor = borderColor;
-        this.innerColor = innerColor;
+    public void select(GraphicsContext gc) {
+        double tempWidth = gc.getLineWidth();
+        gc.setLineWidth(6);
+
+        gc.setStroke(Color.AQUA);
+        gc.strokeLine(alfaPoint.x, alfaPoint.y, betaPoint.x, betaPoint.y);
+
+        gc.setLineWidth(tempWidth);
     }
 
-
-    public void setInnerColor(Color innerColor) {
-        this.innerColor = innerColor;
-    }
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
 }

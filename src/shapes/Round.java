@@ -5,7 +5,7 @@ import javafx.scene.paint.Color;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 
-public class Round extends Shape implements Editable {
+public class Round extends Shape implements Selectable, Editable {
     @Override
     public void drawOn(GraphicsContext gc) {
         double side = (Math.abs(betaPoint.x - alfaPoint.x) < Math.abs(betaPoint.y - alfaPoint.y) ? Math.abs(betaPoint.x - alfaPoint.x) : Math.abs(betaPoint.y - alfaPoint.y));
@@ -21,15 +21,19 @@ public class Round extends Shape implements Editable {
                 side, side);
     }
 
-    public Round(Color borderColor, Color innerColor) {
-        this.borderColor = borderColor;
-        this.innerColor = innerColor;
+    public void select(GraphicsContext gc) {
+        double tempWidth = gc.getLineWidth();
+        gc.setLineWidth(6);
+
+        double side = (Math.abs(betaPoint.x - alfaPoint.x) < Math.abs(betaPoint.y - alfaPoint.y) ? Math.abs(betaPoint.x - alfaPoint.x) : Math.abs(betaPoint.y - alfaPoint.y));
+
+
+        gc.setStroke(Color.AQUA);
+        gc.strokeOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+                (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
+                side, side);
+
+        gc.setLineWidth(tempWidth);
     }
 
-    public void setInnerColor(Color innerColor) {
-        this.innerColor = innerColor;
-    }
-    public void setBorderColor(Color borderColor) {
-        this.borderColor = borderColor;
-    }
 }
