@@ -40,6 +40,10 @@ public class Controller {
             currentShape.setBorderColor(borderColorPicker.getValue());
             currentShape.setInnerColor(innerColorPicker.getValue());
             currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        } else {
+            clearCanvas(null);
+            stack.release(gc);
+            stack.select(gc, new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
         }
     }
 
@@ -47,7 +51,7 @@ public class Controller {
         if (config.drawerMode) {
             currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
             clearCanvas(null);
-            stack.drawOn(gc);
+            stack.release(gc);
             currentShape.drawOn(gc);
         }
 
@@ -65,21 +69,25 @@ public class Controller {
     public void undoBtnWasClicked() {
         clearCanvas(null);
         stack.pop();
-        stack.drawOn(gc);
+        stack.release(gc);
     }
 
     public void redoBtnWasClicked() {
         clearCanvas(null);
         stack.redo();
-        stack.drawOn(gc);
+        stack.release(gc);
     }
 
     public void shapeBtnWasClicked(MouseEvent event) {
+        clearCanvas(null);
+        stack.release(gc);
         config.setDrawerMode(true);
         shapeCreator.setCurrentFactory(((Button) event.getSource()).getId());
     }
 
-    public void selectModeClicked(MouseEvent event) {
+    public void selectModeClicked() {
+        clearCanvas(null);
+        stack.release(gc);
         config.setDrawerMode(false);
     }
 

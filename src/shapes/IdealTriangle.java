@@ -5,6 +5,8 @@ import javafx.scene.paint.Color;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
 
+import java.awt.geom.Point2D;
+
 public class IdealTriangle extends Shape implements Selectable, Editable {
 
     @Override
@@ -21,14 +23,19 @@ public class IdealTriangle extends Shape implements Selectable, Editable {
                 new double[]{alfaPoint.y, alfaPoint.y + height, alfaPoint.y + height}, 3);
     }
 
-    public void select(GraphicsContext gc) {
+    public boolean isSelected(Point2D.Double point) {
+        return (((point.x <= alfaPoint.x && point.x >= betaPoint.x) || (point.x >= alfaPoint.x && point.x <= betaPoint.x)) &&
+                ((point.x <= alfaPoint.y && point.x >= betaPoint.y) || (point.x >= alfaPoint.y && point.x <= betaPoint.y)));
+    }
+
+    public void selectOn(GraphicsContext gc) {
         double tempWidth = gc.getLineWidth();
         gc.setLineWidth(6);
 
         double width = Math.abs(betaPoint.x - alfaPoint.x) * (betaPoint.x < alfaPoint.x ? -1 : 1);
         double height = Math.abs(betaPoint.y - alfaPoint.y) * (betaPoint.y < alfaPoint.y ? -1 : 1);
 
-        gc.setStroke(Color.AQUA);
+        gc.setStroke(Color.BLUE);
         gc.strokePolygon(new double[]{alfaPoint.x, alfaPoint.x + width, alfaPoint.x},
                 new double[]{alfaPoint.y, alfaPoint.y + height, alfaPoint.y + height}, 3);
 

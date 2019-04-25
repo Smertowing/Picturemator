@@ -1,12 +1,13 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
-import shapes.Interfaces.Drawable;
 import shapes.Abstracts.*;
+import shapes.Interfaces.Selectable;
 
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
-public class StackOfShapes implements Drawable {
+public class StackOfShapes {
     private ArrayList<Shape> arrayOfShapes;
     private int pointer;
     private int maxpointer;
@@ -32,10 +33,24 @@ public class StackOfShapes implements Drawable {
         }
     }
 
-    @Override
-    public void drawOn(GraphicsContext gc) {
+    public void release(GraphicsContext gc) {
         for (int i = 0; i < pointer; i++) {
             arrayOfShapes.get(i).drawOn(gc);
         }
     }
+
+    public void select(GraphicsContext gc, Point2D.Double point) {
+        for (int i = pointer-1; i >= 0; i--) {
+            Shape shape = arrayOfShapes.get(i);
+            if (shape instanceof Selectable) {
+                if (((Selectable) shape).isSelected(point)) {
+                    ((Selectable) shape).selectOn(gc);
+                    break;
+                }
+            }
+
+        }
+    }
+
+
 }
