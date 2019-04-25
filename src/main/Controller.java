@@ -1,12 +1,11 @@
 package main;
 
-import javafx.event.Event;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import model.factories.ShapeCreator;
+import model.ShapeCreator;
 import model.*;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
@@ -20,7 +19,6 @@ import java.awt.geom.Point2D;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -40,7 +38,7 @@ public class Controller {
 
     public void initialize() {
         gc = mainCanvas.getGraphicsContext2D();
-        gc.setLineWidth(3);
+        gc.setLineWidth(5);
         gc.strokeRect(0, 0, mainCanvas.getWidth(), mainCanvas.getHeight());
 
         innerColorPicker.setValue(Color.TRANSPARENT);
@@ -66,7 +64,13 @@ public class Controller {
         Point2D.Double point = new Point2D.Double(mouseEvent.getX(), mouseEvent.getY());
         if (!state.drawerMode) {
             if (state.editingShape != null) {
-                ((Editable) state.editingShape).shift(point.x - state.selectionPoint.x, point.y - state.selectionPoint.y);
+                if (Math.abs(state.editingShape.alfaPoint.x - state.selectionPoint.x) < 10 && Math.abs(state.editingShape.alfaPoint.y - state.selectionPoint.y) < 10) {
+                    state.editingShape.setAlfaPoint(point);
+                } else if (Math.abs(state.editingShape.betaPoint.x - state.selectionPoint.x) < 10 && Math.abs(state.editingShape.betaPoint.y - state.selectionPoint.y) < 10) {
+                    state.editingShape.setBetaPoint(point);
+                } else {
+                    ((Editable) state.editingShape).shift(point.x - state.selectionPoint.x, point.y - state.selectionPoint.y);
+                }
                 clearCanvas(null);
                 stack.release(gc);
                 ((Selectable) state.editingShape).selectOn(gc);
@@ -119,6 +123,13 @@ public class Controller {
         gc.clearRect(1, 1, mainCanvas.getWidth() - 2, mainCanvas.getHeight() - 2);
         if (event != null) {
             stack = new StackOfShapes();
+        }
+    }
+
+    public void onHidingColorPicker() {
+        if (!state.drawerMode) {
+            state.editingShape.setBorderColor(borderColorPicker.getValue());
+            state.editingShape.setInnerColor(innerColorPicker.getValue());
         }
     }
 

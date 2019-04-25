@@ -80,9 +80,9 @@
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#undoBtnWasClicked" text="Undo" />
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#redoBtnWasClicked" text="Redo" />
       <Label text="Border Color:" />
-      <ColorPicker fx:id="borderColorPicker" />
+      <ColorPicker fx:id="borderColorPicker" onHiding="#onHidingColorPicker"/>
       <Label text="Inner Color" />
-      <ColorPicker fx:id="innerColorPicker" />
+      <ColorPicker fx:id="innerColorPicker" onHiding="#onHidingColorPicker"/>
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#saveAsClicked"  text="Save As" />
         <Button alignment="BOTTOM_CENTER" onMouseClicked="#openClicked" text="Open..." />
     </HBox>

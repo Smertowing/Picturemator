@@ -2,12 +2,9 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
-import model.factories.ShapeCreator;
 import shapes.Abstracts.*;
 import shapes.Interfaces.*;
-import shapes.*;
 
 public class ShapeConverter {
 

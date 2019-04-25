@@ -7,7 +7,7 @@ import java.awt.geom.Point2D;
 
 public abstract class Shape implements Drawable {
 
-    protected Point2D.Double alfaPoint, betaPoint;
+    public Point2D.Double alfaPoint, betaPoint;
     protected Color innerColor, borderColor;
     protected String classname;
 
@@ -36,7 +36,7 @@ public abstract class Shape implements Drawable {
             String[] aPoints = cols[1].split(",");
             alfaPoint = new Point2D.Double(Double.parseDouble(aPoints[0]), Double.parseDouble(aPoints[1]));
 
-            String[] bPoints = cols[1].split(",");
+            String[] bPoints = cols[2].split(",");
             betaPoint = new Point2D.Double(Double.parseDouble(bPoints[0]), Double.parseDouble(bPoints[1]));
 
             borderColor = new Color(0.0,0.0,0.0,1);
