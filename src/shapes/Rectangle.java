@@ -26,7 +26,7 @@ public class Rectangle extends Shape implements Selectable, Editable, Saveable {
 
     public boolean isSelected(Point2D.Double point) {
         return (((point.x <= alfaPoint.x && point.x >= betaPoint.x) || (point.x >= alfaPoint.x && point.x <= betaPoint.x)) &&
-                ((point.x <= alfaPoint.y && point.x >= betaPoint.y) || (point.x >= alfaPoint.y && point.x <= betaPoint.y)));
+                ((point.y <= alfaPoint.y && point.y >= betaPoint.y) || (point.y >= alfaPoint.y && point.y <= betaPoint.y)));
     }
 
     public void selectOn(GraphicsContext gc) {
