@@ -10,6 +10,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import shapes.Abstracts.*;
+import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 
@@ -22,7 +23,7 @@ public class Controller {
     private StackOfShapes stack = new StackOfShapes();
     private ShapeCreator shapeCreator = new ShapeCreator("Line");
     private GraphicsContext gc;
-    private Config config = Config.getInstance();
+    private State state = State.getInstance();
 
     public void initialize() {
         gc = mainCanvas.getGraphicsContext2D();
@@ -35,30 +36,40 @@ public class Controller {
 
     // Drawing on Canvas
     public void mousePressed(MouseEvent mouseEvent) {
-        if (config.drawerMode) {
+        Point2D.Double point = new Point2D.Double(mouseEvent.getX(), mouseEvent.getY());
+        if (state.drawerMode) {
             currentShape = shapeCreator.create();
             currentShape.setBorderColor(borderColorPicker.getValue());
             currentShape.setInnerColor(innerColorPicker.getValue());
-            currentShape.setAlfaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+            currentShape.setAlfaPoint(point);
         } else {
             clearCanvas(null);
             stack.release(gc);
-            stack.select(gc, new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+            stack.select(gc, point);
         }
     }
 
     public void mouseDragged(MouseEvent mouseEvent) {
-        if (config.drawerMode) {
-            currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
+        Point2D.Double point = new Point2D.Double(mouseEvent.getX(), mouseEvent.getY());
+        if (!state.drawerMode) {
+            if (state.editingShape != null) {
+                ((Editable) state.editingShape).shift(point.x - state.selectionPoint.x, point.y - state.selectionPoint.y);
+                clearCanvas(null);
+                stack.release(gc);
+                ((Selectable) state.editingShape).selectOn(gc);
+                ((Editable) state.editingShape).showPointsOn(gc);
+                state.selectionPoint = point;
+            }
+        } else {
             clearCanvas(null);
             stack.release(gc);
+            currentShape.setBetaPoint(point);
             currentShape.drawOn(gc);
         }
-
     }
 
     public void mouseReleased(MouseEvent mouseEvent) {
-        if (config.drawerMode) {
+        if (state.drawerMode) {
             currentShape.setBetaPoint(new Point2D.Double(mouseEvent.getX(), mouseEvent.getY()));
             currentShape.drawOn(gc);
             stack.push(currentShape);
@@ -81,14 +92,14 @@ public class Controller {
     public void shapeBtnWasClicked(MouseEvent event) {
         clearCanvas(null);
         stack.release(gc);
-        config.setDrawerMode(true);
+        state.drawerMode = true;
         shapeCreator.setCurrentFactory(((Button) event.getSource()).getId());
     }
 
     public void selectModeClicked() {
         clearCanvas(null);
         stack.release(gc);
-        config.setDrawerMode(false);
+        state.drawerMode = false;
     }
 
     private void clearCanvas(MouseEvent event) {

@@ -2,13 +2,14 @@ package model;
 
 import javafx.scene.canvas.GraphicsContext;
 import shapes.Abstracts.*;
-import shapes.Interfaces.Selectable;
+import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 
 public class StackOfShapes {
     private ArrayList<Shape> arrayOfShapes;
+    private State state = State.getInstance();
     private int pointer;
     private int maxpointer;
 
@@ -28,9 +29,7 @@ public class StackOfShapes {
     }
 
     public void redo() {
-        if (pointer < maxpointer) {
-            pointer++;
-        }
+        if (pointer < maxpointer) pointer++;
     }
 
     public void release(GraphicsContext gc) {
@@ -45,11 +44,20 @@ public class StackOfShapes {
             if (shape instanceof Selectable) {
                 if (((Selectable) shape).isSelected(point)) {
                     ((Selectable) shape).selectOn(gc);
-                    break;
+                    if (shape instanceof Editable) {
+                        ((Editable) shape).showPointsOn(gc);
+                        state.editingShape = shape;
+                        state.selectionPoint = point;
+                    } else {
+                        state.editingShape = null;
+                        state.selectionPoint = null;
+                    }
+                    return;
                 }
             }
-
         }
+        state.editingShape = null;
+        state.selectionPoint = null;
     }
 
 
