@@ -4,19 +4,21 @@ import javafx.scene.canvas.GraphicsContext;
 import shapes.Interfaces.Drawable;
 import shapes.Abstracts.*;
 
+import java.util.ArrayList;
+
 public class StackOfShapes implements Drawable {
-    private Shape[] arrayOfShapes;
+    private ArrayList<Shape> arrayOfShapes;
     private int pointer;
     private int maxpointer;
 
     public StackOfShapes() {
-        arrayOfShapes = new Shape[256];
+        arrayOfShapes = new ArrayList<>();
         pointer = 0;
         maxpointer = 0;
     }
 
     public void push(Shape shape) {
-        arrayOfShapes[pointer++] = shape;
+        arrayOfShapes.add(pointer++, shape);
         maxpointer = pointer;
     }
 
@@ -33,7 +35,7 @@ public class StackOfShapes implements Drawable {
     @Override
     public void drawOn(GraphicsContext gc) {
         for (int i = 0; i < pointer; i++) {
-            arrayOfShapes[i].drawOn(gc);
+            arrayOfShapes.get(i).drawOn(gc);
         }
     }
 }
