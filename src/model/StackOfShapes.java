@@ -24,6 +24,7 @@ public class StackOfShapes {
         return arrayOfShapes.isEmpty();
     }
 
+
     public void push(Shape shape) {
         arrayOfShapes.add(pointer++, shape);
         maxPointer = pointer;

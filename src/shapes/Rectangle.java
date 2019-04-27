@@ -7,7 +7,7 @@ import shapes.Interfaces.*;
 
 import java.awt.geom.Point2D;
 
-public class Rectangle extends Shape implements Selectable, Editable, SaveLoadable {
+public class Rectangle extends Shape implements Selectable, SaveLoadable {
 
     public Rectangle() {
         classname = "Rectangle";
