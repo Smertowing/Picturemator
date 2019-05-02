@@ -4,7 +4,6 @@ import shapes.Abstracts.Shape;
 
 import java.io.File;
 import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.nio.file.Paths;
@@ -17,7 +16,7 @@ import java.util.jar.JarFile;
 public class ShapeCreator {
 
     private static String libsPath = "libs";
-    private static List<Class<Shape>> shapeClasses = getShapeClasses();
+    public static List<Class<Shape>> shapeClasses = getShapeClasses();
 
     private static List<Class<Shape>> getShapeClasses() {
 

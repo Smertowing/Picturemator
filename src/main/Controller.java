@@ -1,16 +1,21 @@
 package main;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import model.*;
+import model.ShapeConverter;
+import model.ShapeCreator;
+import model.StackOfShapes;
+import model.State;
 import shapes.Abstracts.Shape;
 import shapes.Interfaces.Editable;
 import shapes.Interfaces.Selectable;
@@ -33,6 +38,8 @@ public class Controller {
     private Canvas mainCanvas;
     @FXML
     private ColorPicker innerColorPicker, borderColorPicker;
+    @FXML
+    private VBox button_box;
     private Shape currentShape;
     private StackOfShapes stack = new StackOfShapes();
     private GraphicsContext gc;
@@ -47,6 +54,18 @@ public class Controller {
 
         innerColorPicker.setValue(Color.TRANSPARENT);
         borderColorPicker.setValue(Color.BLACK);
+
+        for(Class<Shape> shapeClass: ShapeCreator.shapeClasses) {
+            addButtonFor(shapeClass.getName());
+        }
+    }
+
+    private void addButtonFor(String name) {
+        for(Node nodeIn:button_box.getChildren()){
+            if(nodeIn instanceof Button && name.endsWith(nodeIn.getId())){
+                nodeIn.setDisable(false);
+            }
+        }
     }
 
     // Drawing on Canvas
