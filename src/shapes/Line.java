@@ -20,12 +20,14 @@ public class Line extends Shape implements Selectable, Editable, SaveLoadable {
         gc.strokeLine(alfaPoint.x, alfaPoint.y, betaPoint.x, betaPoint.y);
     }
 
+    @Override
     public boolean isSelected(Point2D.Double point) {
         return (((point.x <= alfaPoint.x && point.x >= betaPoint.x) || (point.x >= alfaPoint.x && point.x <= betaPoint.x)) &&
                 ((point.y <= alfaPoint.y && point.y >= betaPoint.y) || (point.y >= alfaPoint.y && point.y <= betaPoint.y)) &&
                 (Math.abs(((alfaPoint.x - point.x) / (alfaPoint.y - point.y)) - ((alfaPoint.x - betaPoint.x) / (alfaPoint.y - betaPoint.y))) < 3));
     }
 
+    @Override
     public void selectOn(GraphicsContext gc) {
         double tempWidth = gc.getLineWidth();
         gc.setLineWidth(6);

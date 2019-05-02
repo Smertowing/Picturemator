@@ -64,4 +64,22 @@ public abstract class Shape implements Drawable {
         }
     }
 
+    public boolean isSelected(Point2D.Double point) {
+        return (((point.x <= alfaPoint.x && point.x >= betaPoint.x) || (point.x >= alfaPoint.x && point.x <= betaPoint.x)) &&
+                ((point.y <= alfaPoint.y && point.y >= betaPoint.y) || (point.y >= alfaPoint.y && point.y <= betaPoint.y)));
+    }
+
+    public void selectOn(GraphicsContext gc) {
+        double tempWidth = gc.getLineWidth();
+        gc.setLineWidth(6);
+
+        gc.setStroke(Color.BLUE);
+        gc.strokeRect((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+                (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
+                Math.abs(betaPoint.x - alfaPoint.x),
+                Math.abs(betaPoint.y - alfaPoint.y));
+
+        gc.setLineWidth(tempWidth);
+    }
+
 }

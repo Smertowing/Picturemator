@@ -30,11 +30,7 @@ public class Square extends Shape implements Selectable, Editable, SaveLoadable 
                 side);
     }
 
-    public boolean isSelected(Point2D.Double point) {
-        return (((point.x <= alfaPoint.x && point.x >= betaPoint.x) || (point.x >= alfaPoint.x && point.x <= betaPoint.x)) &&
-                ((point.y <= alfaPoint.y && point.y >= betaPoint.y) || (point.y >= alfaPoint.y && point.y <= betaPoint.y)));
-    }
-
+    @Override
     public void selectOn(GraphicsContext gc) {
         double tempWidth = gc.getLineWidth();
         gc.setLineWidth(6);
