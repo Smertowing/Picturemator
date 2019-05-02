@@ -1,11 +1,10 @@
-package shapes;
+package shapes.Implementations;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import shapes.Abstracts.*;
-import shapes.Interfaces.*;
-
-import java.awt.geom.Point2D;
+import shapes.Abstracts.Shape;
+import shapes.Interfaces.SaveLoadable;
+import shapes.Interfaces.Selectable;
 
 public class Rectangle extends Shape implements Selectable, SaveLoadable {
 

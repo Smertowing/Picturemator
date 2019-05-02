@@ -1,7 +1,8 @@
 package model;
 
-import shapes.*;
-import shapes.Abstracts.*;
+import shapes.Abstracts.Shape;
+import shapes.Abstracts.ShapeFactory;
+import shapes.Implementations.*;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,8 +1,9 @@
 package model;
 
 import javafx.scene.canvas.GraphicsContext;
-import shapes.Abstracts.*;
-import shapes.Interfaces.*;
+import shapes.Abstracts.Shape;
+import shapes.Interfaces.Editable;
+import shapes.Interfaces.Selectable;
 
 import java.awt.geom.Point2D;
 import java.util.ArrayList;

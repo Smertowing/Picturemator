@@ -1,16 +1,16 @@
-package shapes;
+package shapes.Implementations;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
-import shapes.Abstracts.*;
-import shapes.Interfaces.*;
+import shapes.Abstracts.Shape;
+import shapes.Interfaces.Editable;
+import shapes.Interfaces.SaveLoadable;
+import shapes.Interfaces.Selectable;
 
-import java.awt.geom.Point2D;
+public class Round extends Shape implements Selectable, Editable, SaveLoadable {
 
-public class Square extends Shape implements Selectable, Editable, SaveLoadable {
-
-    public Square() {
-        classname = "Square";
+    public Round() {
+        classname = "Round";
     }
 
     @Override
@@ -18,16 +18,14 @@ public class Square extends Shape implements Selectable, Editable, SaveLoadable 
         double side = (Math.abs(betaPoint.x - alfaPoint.x) < Math.abs(betaPoint.y - alfaPoint.y) ? Math.abs(betaPoint.x - alfaPoint.x) : Math.abs(betaPoint.y - alfaPoint.y));
 
         gc.setStroke(borderColor);
-        gc.strokeRect((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+        gc.strokeOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
                 (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
-                side,
-                side);
+                side, side);
 
         gc.setFill(innerColor);
-        gc.fillRect((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+        gc.fillOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
                 (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
-                side,
-                side);
+                side, side);
     }
 
     @Override
@@ -38,10 +36,9 @@ public class Square extends Shape implements Selectable, Editable, SaveLoadable 
         double side = (Math.abs(betaPoint.x - alfaPoint.x) < Math.abs(betaPoint.y - alfaPoint.y) ? Math.abs(betaPoint.x - alfaPoint.x) : Math.abs(betaPoint.y - alfaPoint.y));
 
         gc.setStroke(Color.BLUE);
-        gc.strokeRect((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
+        gc.strokeOval((alfaPoint.x < betaPoint.x ? alfaPoint.x : betaPoint.x),
                 (alfaPoint.y < betaPoint.y ? alfaPoint.y : betaPoint.y),
-                side,
-                side);
+                side, side);
 
         gc.setLineWidth(tempWidth);
     }

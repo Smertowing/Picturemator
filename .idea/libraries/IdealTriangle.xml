@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="IdealTriangle">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/shapes/IdealTriangle.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="jar://$PROJECT_DIR$/src/shapes/IdealTriangle.jar!/" recursive="false" />
+  </library>
+</component>

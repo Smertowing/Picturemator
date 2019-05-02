@@ -1,10 +1,10 @@
 package model;
 
+import shapes.Abstracts.Shape;
+import shapes.Interfaces.SaveLoadable;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import shapes.Abstracts.*;
-import shapes.Interfaces.*;
 
 public class ShapeConverter {
 

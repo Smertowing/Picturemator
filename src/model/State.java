@@ -1,7 +1,8 @@
 package model;
 
+import shapes.Abstracts.Shape;
+
 import java.awt.geom.Point2D;
-import shapes.Abstracts.*;
 
 public class State {
 
