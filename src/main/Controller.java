@@ -10,10 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
-import model.ShapeConverter;
-import model.ShapeCreator;
-import model.StackOfShapes;
-import model.State;
+import model.*;
 import shapes.Abstracts.Shape;
 import shapes.Interfaces.Editable;
 import shapes.Interfaces.Selectable;
@@ -38,9 +35,10 @@ public class Controller {
     private ColorPicker innerColorPicker, borderColorPicker;
     private Shape currentShape;
     private StackOfShapes stack = new StackOfShapes();
-    private ShapeCreator shapeCreator = new ShapeCreator("Line");
     private GraphicsContext gc;
     private State state = State.getInstance();
+
+    private String currentShapeName = "Line";
 
     public void initialize() {
         gc = mainCanvas.getGraphicsContext2D();
@@ -55,7 +53,12 @@ public class Controller {
     public void mousePressed(MouseEvent mouseEvent) {
         Point2D.Double point = new Point2D.Double(mouseEvent.getX(), mouseEvent.getY());
         if (state.drawerMode) {
-            currentShape = shapeCreator.create();
+            try {
+                currentShape = ShapeCreator.createShape(currentShapeName);
+            } catch (Exception e) {
+                currentShapeName = "Line";
+                currentShape = ShapeCreator.createShape(currentShapeName);
+            }
             currentShape.setBorderColor(borderColorPicker.getValue());
             currentShape.setInnerColor(innerColorPicker.getValue());
             currentShape.setAlfaPoint(point);
@@ -116,7 +119,7 @@ public class Controller {
         clearCanvas(null);
         stack.release(gc);
         state.drawerMode = true;
-        shapeCreator.setCurrentFactory(((Button) event.getSource()).getId());
+        currentShapeName = ((Button) event.getSource()).getId();
     }
 
     public void selectModeClicked() {

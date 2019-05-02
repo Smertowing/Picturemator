@@ -1,81 +1,79 @@
 package model;
 
 import shapes.Abstracts.Shape;
-import shapes.Abstracts.ShapeFactory;
-import shapes.Implementations.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.File;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 public class ShapeCreator {
 
-    private ShapeFactory currentFactory;
-    private Map<String, ShapeFactory> factories = new HashMap<>();
+    private static String libsPath = "libs";
+    private static List<Class<Shape>> shapeClasses = getShapeClasses();
 
-    public ShapeCreator(String currentFactory) {
-        factories.put("Line", new LineFactory());
-        factories.put("Round", new RoundFactory());
-        factories.put("Rectangle", new RectangleFactory());
-        factories.put("Square", new SquareFactory());
-        factories.put("Oval", new OvalFactory());
-        factories.put("IdealTriangle", new IdealTriangleFactory());
-        factories.put("Triangle", new TriangleFactory());
-        this.currentFactory = factories.get(currentFactory);
-    }
+    private static List<Class<Shape>> getShapeClasses() {
 
-    public Shape create() {
-        return currentFactory.createShape();
-    }
+        List<Class<Shape>> shapes = new ArrayList<>();
+        File folder = new File(Paths.get(libsPath).toAbsolutePath().toString());
+        File[] listOfFiles = folder.listFiles();
 
-    public void setCurrentFactory(String currentFactory) {
-        this.currentFactory = factories.get(currentFactory);
-    }
+        if (listOfFiles == null) return shapes;
 
-    static class IdealTriangleFactory extends ShapeFactory {
-        @Override
-        public Shape createShape() {
-            return new IdealTriangle();
+        for (File likelyFile : listOfFiles) {
+            if (likelyFile.isFile()) {
+                try {
+                    JarFile jarFile = new JarFile(likelyFile.getAbsolutePath());
+                    Enumeration<JarEntry> enumer = jarFile.entries();
+
+                    URL[] urls = {new URL("jar:file:" + likelyFile.getAbsolutePath() + "!/")};
+                    URLClassLoader classLoader = URLClassLoader.newInstance(urls);
+
+                    while (enumer.hasMoreElements()) {
+                        JarEntry jarEntry = enumer.nextElement();
+                        if (jarEntry.isDirectory() || !jarEntry.getName().endsWith(".class")) {
+                            continue;
+                        }
+
+                        String className = jarEntry.getName().substring(0, jarEntry.getName().length() - 6);
+                        className = className.replace('/', '.');
+
+                        Class instance = classLoader.loadClass(className);
+
+                        if (Shape.class.isAssignableFrom(instance)) {
+                            shapes.add((Class<Shape>) instance);
+                        }
+
+
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
+
+        return shapes;
     }
 
-    static class LineFactory extends ShapeFactory {
-        @Override
-        public Shape createShape() {
-            return new Line();
+    public static Shape createShape(String name) {
+        for(Class<Shape> shapeClass: shapeClasses) {
+            if (shapeClass.getName().endsWith(name)) {
+                try {
+                    Constructor constructor = shapeClass.getConstructor();
+                    return (Shape) constructor.newInstance();
+                } catch (Exception e) {
+                    throw new RuntimeException();
+                }
+            }
         }
+        throw new RuntimeException();
     }
 
-    static class OvalFactory extends ShapeFactory {
-        @Override
-        public Shape createShape() {
-            return new Oval();
-        }
-    }
-
-    static class RectangleFactory extends ShapeFactory {
-        @Override
-        public Shape createShape() {
-            return new Rectangle();
-        }
-    }
-
-    static class RoundFactory extends ShapeFactory {
-        @Override
-        public Shape createShape() { return new Round(); }
-    }
-
-    static class SquareFactory extends ShapeFactory {
-        @Override
-        public Shape createShape() {
-            return new Square();
-        }
-    }
-
-    static class TriangleFactory extends ShapeFactory {
-        @Override
-        public Triangle createShape() {
-            return new Triangle();
-        }
-    }
 }
-

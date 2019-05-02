@@ -23,13 +23,11 @@ public class ShapeConverter {
 
     public StackOfShapes unwrap(List<String> rows) {
         StackOfShapes stack = new StackOfShapes();
-        ShapeCreator shapeCreator = new ShapeCreator("");
         for(String row : rows) {
             String[] cols = row.split(";");
             String className = cols[0];
-            shapeCreator.setCurrentFactory(className);
             try {
-                Shape shape = shapeCreator.create();
+                Shape shape = ShapeCreator.createShape(className);
                 if(shape instanceof SaveLoadable)
                     if (((SaveLoadable) shape).unwrap(row)) {
                         stack.push(shape);

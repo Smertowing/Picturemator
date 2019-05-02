@@ -6,27 +6,38 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Selection methods override">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Picturemator_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/IdealTriangle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/IdealTriangle.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Line.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Oval.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Rectangle.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Round.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Square.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/Triangle.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Jar's and new Factory">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/IdealTriangle.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/IdealTriangle.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Line.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Line.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Oval.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Oval.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Rectangle.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Rectangle.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Round.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Round.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Square.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Square.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/libs/Triangle.jar" beforeDir="false" afterPath="$PROJECT_DIR$/libs/Triangle.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/main/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/main/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeConverter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeConverter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$IdealTriangleFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$LineFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$OvalFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$RectangleFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$RoundFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$SquareFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator$TriangleFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/model/ShapeCreator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/StackOfShapes.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/model/StackOfShapes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Abstracts/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Abstracts/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/IdealTriangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/IdealTriangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Line.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Line.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Oval.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Oval.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Round.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Round.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Square.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/shapes/Triangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/model/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Picturemator/model/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/IdealTriangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Line.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Oval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Round.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Square.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Picturemator/shapes/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ShapeConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ShapeConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ShapeCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ShapeCreator.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,16 +119,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/model/ShapeCreator.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Square.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1397#1398#0" expanded="true" />
-                <element signature="e#1438#1439#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/model/State.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -125,54 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/ShapeConverter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/model/StackOfShapes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shapes/Abstracts/ShapeFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Picturemator.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
-              <folding>
-                <element signature="e#586#587#0" expanded="true" />
-                <element signature="e#614#615#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="435">
+              <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -180,8 +149,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="174" column="6" selection-start-line="174" selection-start-column="6" selection-end-line="174" selection-end-column="40" />
+            <state relative-caret-position="-996">
+              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/IdealTriangle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/model/ShapeCreator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-238">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,22 +177,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shapes/Line.java">
+        <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Oval.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/META-INF/MANIFEST.MF">
+        <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Line.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="165">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -215,8 +202,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -259,13 +246,8 @@
         <option value="$PROJECT_DIR$/src/model/Files.java" />
         <option value="$PROJECT_DIR$/src/model/Files/ShapeConverter.java" />
         <option value="$PROJECT_DIR$/src/main/View.fxml" />
-        <option value="$PROJECT_DIR$/src/main/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
-        <option value="$PROJECT_DIR$/src/model/State.java" />
         <option value="$PROJECT_DIR$/src/shapes/Interfaces/Saveable.java" />
-        <option value="$PROJECT_DIR$/src/model/ShapeCreator.java" />
-        <option value="$PROJECT_DIR$/src/model/ShapeConverter.java" />
-        <option value="$PROJECT_DIR$/src/model/StackOfShapes.java" />
         <option value="$PROJECT_DIR$/src/shapes/Rectangle.java" />
         <option value="$PROJECT_DIR$/src/shapes/Abstracts/Shape.java" />
         <option value="$PROJECT_DIR$/src/shapes/Triangle.java" />
@@ -275,6 +257,21 @@
         <option value="$PROJECT_DIR$/src/shapes/IdealTriangle.java" />
         <option value="$PROJECT_DIR$/src/shapes/Line.java" />
         <option value="$PROJECT_DIR$/Picturemator.iml" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/Line.java" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/IdealTriangle.java" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/Oval.java" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/Rectangle.java" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/Round.java" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/Square.java" />
+        <option value="$PROJECT_DIR$/src/shapes/Implementations/Triangle.java" />
+        <option value="$PROJECT_DIR$/src/model/State.java" />
+        <option value="$PROJECT_DIR$/src/model/StackOfShapes.java" />
+        <option value="$PROJECT_DIR$/src/model/BetterShapeCreator.java" />
+        <option value="$PROJECT_DIR$/src/model/ClassicShapeCreator.java" />
+        <option value="$PROJECT_DIR$/src/model/ModulesShapeCreator.java" />
+        <option value="$PROJECT_DIR$/src/model/ShapeCreator.java" />
+        <option value="$PROJECT_DIR$/src/main/Controller.java" />
+        <option value="$PROJECT_DIR$/src/model/ShapeConverter.java" />
       </list>
     </option>
   </component>
@@ -395,12 +392,12 @@
       <recent name="https://github.com/N1ghtF1re/Graphics-Editor.git" />
       <recent name="https://github.com/mineralsfree/Paint.git" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/libs" />
       <recent name="$PROJECT_DIR$/src/shapes" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -519,7 +516,7 @@
       <workItem from="1556794437278" duration="53000" />
       <workItem from="1556794531480" duration="2771000" />
       <workItem from="1556819160905" duration="6000" />
-      <workItem from="1556819251597" duration="848000" />
+      <workItem from="1556819251597" duration="7506000" />
     </task>
     <task id="LOCAL-00001" summary="Initialize">
       <created>1552590568292</created>
@@ -710,11 +707,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556796616337</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Imports">
+      <created>1556820369075</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556820369075</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61153000" />
+    <option name="totallyTimeSpent" value="67811000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -727,6 +731,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="951" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.30647132" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -737,14 +742,14 @@
       <window_info id="UI Designer" order="6" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32982457" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.034924332" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.051461987" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32945284" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.034924332" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.05122235" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32982457" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32945284" />
       <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32865497" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3282887" />
       <window_info anchor="bottom" id="Problems" order="9" />
       <window_info anchor="bottom" id="Changes" order="10" />
       <window_info anchor="bottom" id="Profiler" order="11" />
@@ -774,7 +779,6 @@
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="List of Shapes" />
     <MESSAGE value="Undo + Redo" />
     <MESSAGE value="fixes" />
     <MESSAGE value="One more figure" />
@@ -799,11 +803,17 @@
     <MESSAGE value="Edit size and color" />
     <MESSAGE value="Sharpening" />
     <MESSAGE value="Selection methods override" />
-    <option name="LAST_COMMIT_MESSAGE" value="Selection methods override" />
+    <MESSAGE value="Imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imports" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Picturemator$Main.ic" NAME="Main Coverage Results" MODIFIED="1556825839315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
@@ -880,17 +890,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/State.java">
+    <entry file="https://github.com/N1ghtF1re/Graphics-Editor.git">
+      <provider selected="true" editor-type-id="httpFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Interfaces/Editable.java">
+    <entry file="file://$PROJECT_DIR$/Picturemator.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state relative-caret-position="150">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+          <folding>
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Triangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Round.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Rectangle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -898,6 +943,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shapes/Interfaces/Editable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="1" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -918,84 +970,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Rectangle.java">
+    <entry file="file://$PROJECT_DIR$/src/shapes/Abstracts/ShapeFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" column="4" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="60">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Oval.java">
+    <entry file="file://$PROJECT_DIR$/src/model/StackOfShapes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="240">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/model/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Square.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Line.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Round.java">
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/Oval.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="315">
+          <caret line="28" column="23" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="https://github.com/N1ghtF1re/Graphics-Editor.git">
-      <provider selected="true" editor-type-id="httpFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Square.java">
+    <entry file="file://$PROJECT_DIR$/src/shapes/Implementations/IdealTriangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Triangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/IdealTriangle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Line.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Picturemator.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="60">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1011,62 +1034,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shapes/Abstracts/ShapeFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/model/ClassicShapeCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="20" column="42" lean-forward="true" selection-start-line="20" selection-start-column="42" selection-end-line="20" selection-end-column="42" />
+        <state relative-caret-position="135">
+          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
           <folding>
-            <element signature="e#586#587#0" expanded="true" />
-            <element signature="e#614#615#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="174" column="6" selection-start-line="174" selection-start-column="6" selection-end-line="174" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/StackOfShapes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-996">
+          <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ShapeConverter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/ShapeCreator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
+        <state relative-caret-position="-238">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1397#1398#0" expanded="true" />
-            <element signature="e#1438#1439#0" expanded="true" />
           </folding>
         </state>
       </provider>
