@@ -18,7 +18,13 @@ public class State {
 
     public static State getInstance() {
         if(instance == null) {
-            instance = new State();
+            synchronized (State.class){
+                if (instance == null){
+                    instance = new State();
+
+                }
+
+            }
         }
         return instance;
     }

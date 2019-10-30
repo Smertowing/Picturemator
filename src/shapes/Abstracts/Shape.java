@@ -6,7 +6,7 @@ import shapes.Interfaces.Drawable;
 
 import java.awt.geom.Point2D;
 
-public abstract class Shape implements Drawable {
+public abstract class Shape implements Drawable, Comparable<Shape> {
 
     public Point2D.Double alfaPoint, betaPoint;
     protected Color innerColor, borderColor;
@@ -31,7 +31,10 @@ public abstract class Shape implements Drawable {
         gc.fillOval(alfaPoint.x-5,alfaPoint.y-5,11,11);
         gc.fillOval(betaPoint.x-5,betaPoint.y-5,11,11);
     }
-
+    //compares figures by width
+    public int compareTo(Shape p){
+        return (int)((alfaPoint.x - betaPoint.x)-(p.betaPoint.x - p.alfaPoint.x));;
+    }
     public void shift(Double deltaX, Double deltaY) {
         alfaPoint.x += deltaX;
         alfaPoint.y += deltaY;
